@@ -2,14 +2,13 @@
 import React from 'react'
 import Tabs from './Tab'
 import Post from './Post';
-import About from './About';
 import ExperienceForm1 from './exppage';
 import AboutSection from './aboutsection';
 
 const ProfileDetails = () => {
     const tabs = [
-        { label: 'About', content: <About /> },
-        { label: 'Skills & Certificates', content: <AboutSection/> },
+        { label: 'About', content: <AboutSection/> },
+        { label: 'Skills & Certificates', content: "" },
         { label: 'Posts', content: <Post /> },
         { label: 'Spaces', content: <ExperienceForm1 /> },
         // Add more tabs as needed

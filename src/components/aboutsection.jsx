@@ -1,24 +1,21 @@
-// src/components/AboutSection.js
 import React, { useState, useEffect } from 'react';
+import { FiEdit2 } from 'react-icons/fi';
 
 const AboutSection = () => {
     const [aboutDetails, setAboutDetails] = useState('');
     const [isEditing, setIsEditing] = useState(false);
-
     useEffect(() => {
         const storedAboutDetails = localStorage.getItem('aboutDetails') || '';
         setAboutDetails(storedAboutDetails);
     }, []);
-
     const handleSave = () => {
-        localStorage.setItem('aboutDetails', aboutDetails);
-        setIsEditing(false);
+        if (aboutDetails){
+            localStorage.setItem('aboutDetails', aboutDetails);
+            setIsEditing(false);
+        }
     };
-
     return (
-        <div className="max-w-md mx-auto mt-8 p-4 border border-gray-300 rounded">
-            <h2 className="text-xl font-semibold mb-4">About Me</h2>
-
+        <div className="w-[95%] mx-5 mt-8 p-4 border border-gray-300 rounded">
             {isEditing ? (
                 <textarea
                     value={aboutDetails}
@@ -27,10 +24,9 @@ const AboutSection = () => {
                     rows="4"
                 ></textarea>
             ) : (
-                <p className="mb-4">{aboutDetails}</p>
+                    <p className="mb-4">{aboutDetails}</p>
             )}
-
-            <div className="flex justify-end">
+            <div className="flex justify-between">
                 {isEditing ? (
                     <>
                         <button
@@ -49,14 +45,13 @@ const AboutSection = () => {
                 ) : (
                     <button
                         onClick={() => setIsEditing(true)}
-                        className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
+                            className="flex bg-[#6B6EFC] rounded-full w-5 h-5 justify-center items-center hover:bg-blue-600"
                     >
-                        Edit
+                            <FiEdit2 color={"white"} size={10} />
                     </button>
                 )}
             </div>
         </div>
     );
 };
-
 export default AboutSection;
