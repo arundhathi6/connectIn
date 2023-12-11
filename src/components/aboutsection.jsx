@@ -15,7 +15,9 @@ const AboutSection = () => {
         }
     };
     return (
-        <div className="w-[95%] mx-5 mt-8 p-4 border border-gray-300 rounded">
+        <>
+        <p className='font-medium text-lg ml-5'>About me</p>
+         <div className="w-[95%] mx-5 mt-5 p-4 border border-gray-300 rounded">
             {isEditing ? (
                 <textarea
                     value={aboutDetails}
@@ -51,7 +53,8 @@ const AboutSection = () => {
                     </button>
                 )}
             </div>
-        </div>
+        </div></>
+       
     );
 };
 export default AboutSection;
