@@ -107,13 +107,13 @@ const AboutSection = () => {
                 </div>
                 <div className='  w-[80px] flex gap-2'>
                     <button
-                        onClick={() => setIsEditing(true)}
+                        // onClick={() => setIsEditing(true)}
                         className="flex bg-[#6B6EFC] rounded-full w-5 h-5 justify-center items-center hover:bg-blue-600"
                     >
                         <IoMdAdd color={"white"} size={15} />
                     </button>
                     <button
-                        onClick={() => setIsEditing(true)}
+                        // onClick={() => setIsEditing(true)}
                         className="flex bg-[#6B6EFC] rounded-full w-5 h-5 justify-center items-center hover:bg-blue-600"
                     >
                         <FiEdit2 color={"white"} size={10} />
